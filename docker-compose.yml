@@ -1,0 +1,39 @@
+services:
+  postgres:
+    image: postgres:15-alpine
+    restart: always
+    environment:
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: scinets
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+  backend:
+    build: ./backend
+    restart: always
+    ports:
+      - "8005:8005"
+    environment:
+      - SCINETS_DATABASE_URL=${SCINETS_DATABASE_URL}
+      # QDRANT_URL removed for optimization
+      # Frontend URL for Magic Links
+      - SCINETS_FRONTEND_URL=${SCINETS_FRONTEND_URL}
+      # Valid SMTP credentials are loaded from env_file below
+    env_file:
+      - ./backend/.env
+    depends_on:
+      - postgres
+
+  frontend:
+    build: ./scinets-discovery-hub
+    restart: always
+    ports:
+      - "8080:80"
+    depends_on:
+      - backend
+
+volumes:
+  postgres_data:

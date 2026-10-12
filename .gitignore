@@ -1,0 +1,71 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.coverage
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+# lib/ (Removed to allow frontend src/lib)
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# Node
+node_modules/
+npm-debug.log
+yarn-error.log
+.next/
+out/
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+
+# Production artifacts
+data/
+logs/
+*.db
+*.pdf
+*.log
+*.pid
+
+# Generated local outputs
+backend/contact_messages.jsonl
+backend/diagnostic_output.txt
+backend/eval_data.jsonl
+correlation_report_temp.md
+eval_data.jsonl
+full_metrics_table.csv
+logs_*.txt
+ml1_trace.json
+new_full_metrics.csv
+path_drop_analysis.json
+path_drop_analysis_extension.json
+path_drop_table.csv
+path_report_out.txt
+probe_debug_error.log
+stderr_eval.txt

@@ -1,0 +1,8 @@
+sendgrid.env
+.env
+.coverage
+.pytest_cache/
+__pycache__/
+contact_messages.jsonl
+diagnostic_output.txt
+eval_data.jsonl
